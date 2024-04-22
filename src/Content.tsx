@@ -1,6 +1,6 @@
-import React from "react";
+import { FC } from "react";
 
-const Content: React.FC = () => {
+const Content: FC = () => {
     return (
         <div className="content" data-testid="contentDiv">
             <p>welcome to jcleigh</p>
