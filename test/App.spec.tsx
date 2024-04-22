@@ -1,25 +1,34 @@
-import React from 'react';
-import { cleanup, render } from '@testing-library/react';
+import React from "react";
+import { cleanup, render } from "@testing-library/react";
+import { describe, it, expect, afterEach } from "bun:test";
+import App from "../src/App";
 
-import App from '../src/App';
-
-describe('App', () => {
+describe("App", () => {
     const setupTests = () => {
-        const app = render(<App />);
-
+        const utils = render(<App />);
+        const header = utils.getByTestId("header");
+        const content = utils.getByTestId("contentDiv");
+        
         return {
-            app,
+            header,
+            content,
+            ...utils,
         };
     };
 
     afterEach(cleanup);
-    it('renders without crashing', () => {
+    
+    it("renders without crashing", () => {
         setupTests();
     });
 
-    it('should render the given message', () => {
-        const { app } = setupTests();
-        app.getByText('welcome to jcleigh');
+    it("renders the Header component", () => {
+        const { header } = setupTests();
+        expect(header).not.toBeNull();
+    });
+
+    it("renders the Content component", () => {
+        const { content } = setupTests();
+        expect(content).not.toBeNull();
     });
 });
-
