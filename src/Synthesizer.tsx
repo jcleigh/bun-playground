@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { FC, useState } from "react";
 import * as Tone from "tone";
 
 interface NoteItem {
@@ -20,7 +20,7 @@ const PianoKey = ({ note, isBlackKey, onClick }: PianoKeyProps) => (
     </div>
 );
 
-const Synthesizer = () => {
+const Synthesizer: FC = () => {
     const [isAudioContextStarted, setIsAudioContextStarted] = useState<boolean>(false);
     const [sequence, setSequence] = useState<NoteItem[]>([]);
     const [currentDuration, setCurrentDuration] = useState<string>("8n");
