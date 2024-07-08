@@ -1,13 +1,13 @@
 import { FC } from "react";
 import "./App.css";
 import Header from "./Header";
-import Content from "./Content";
+import Synthesizer from "./Synthesizer";
 
 const App: FC = () => {
   return (
     <div className="App">
       <Header />
-      <Content />
+      <Synthesizer />
     </div>
   );
 };

@@ -2,18 +2,33 @@
   --fallout-background-color: #003C7D;
   --fallout-text-color: #FDB813;
   --fallout-hover-color: #FFFFFF;
+  --fallout-active-button: #FDB813;
+  --fallout-inactive-button: #AAAAAA;
+  --fallout-cancel-button: #be8500;
 
   --pip-boy-background-color: #1B4721;
   --pip-boy-text-color: #9BBF10; 
   --pip-boy-hover-color: #FFFFFF; 
+  --pip-boy-active-button: #9BBF10;
+  --pip-boy-inactive-button: #54660b;
+  --pip-boy-cancel-button: #80a003;
   
   --dark-background-color: #000000;
   --dark-text-color: #FFFFFF;
-  --dark-hover-color: #FDB813;
+  --dark-hover-color: #00bdbd;
+  --dark-active-button: #00bdbd;
+  --dark-inactive-button: #AAAAAA;
+  --dark-cancel-button: #EE573C;
 
   --light-background-color: #FFFFFF;
   --light-text-color: #000000;
   --light-hover-color: #0000EE;
+  --light-active-button: #00bdbd;
+  --light-inactive-button: #AAAAAA;
+  --light-cancel-button: #EE573C;
+
+  --black-key-text-color: #FFFFFF;
+  --white-key-text-color: #000000;
 }
 
 body {
@@ -76,3 +91,62 @@ body {
   flex-direction: column;
   align-items: flex-start;
 }
+
+.piano {
+  display: flex;
+  position: relative;
+  height: 100px;
+  width: 80vw;
+}
+
+.white-key {
+  position: relative;
+  float: left;
+  width: 2.75%; /* Twice the previous width for wider keys */
+  height: 100%;
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: var(--white-key-text-color);
+}
+
+.black-key {
+  position: absolute;
+  width: 2.2%; /* Twice the previous width for wider black keys */
+  height: 60%; /* Keeping the same proportion relative to the piano height */
+  background-color: black;
+  margin-left: -11.8%; /* Adjusted to center the wider black keys */
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: var(--black-key-text-color);
+}
+
+/* Adjusting the left positions for black keys based on the new widths */
+/* NOTE: debug dual renders are super messing this up */
+.black-key:nth-child(1) { left: 6.82%; }
+.black-key:nth-child(2) { left: 13.64%; } /* C3# */
+.black-key:nth-child(3) { left: 27.28%; }
+.black-key:nth-child(4) { left: 16.45%; } /* D3# */
+.black-key:nth-child(5) { left: 40.92%; }
+.black-key:nth-child(6) { left: 54.56%; }
+.black-key:nth-child(7) { left: 22.3%; } /* F3# */
+.black-key:nth-child(8) { left: 68.20%; }
+.black-key:nth-child(9) { left: 25.1%; } /* G3# */
+.black-key:nth-child(10) { left: 28%; }
+.black-key:nth-child(11) { left: 28%; } /* A3# */
+.black-key:nth-child(12) { left: 35.66%; }
+.black-key:nth-child(13) { left: 35.66%; }
+.black-key:nth-child(14) { left: 33.66%; } /* C4# */
+.black-key:nth-child(15) { left: 36.66%; }
+.black-key:nth-child(16) { left: 36.66%; } /* D4# */
+.black-key:nth-child(17) { left: 45.66%; }
+.black-key:nth-child(18) { left: 45.66%; }
+.black-key:nth-child(19) { left: 42.33%; } /* F4# */
+.black-key:nth-child(20) { left: 45.66%; }
+.black-key:nth-child(21) { left: 45.22%; } /* G4# */
+.black-key:nth-child(22) { left: 55.66%; }
+.black-key:nth-child(23) { left: 48.12%; } /* A4# */

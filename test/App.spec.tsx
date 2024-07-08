@@ -7,11 +7,11 @@ describe("App", () => {
     const setupTests = () => {
         const utils = render(<App />);
         const header = utils.getByTestId("header");
-        const content = utils.getByTestId("contentDiv");
+        const synthesizer = utils.getByTestId("synthesizer");
         
         return {
             header,
-            content,
+            synthesizer,
             ...utils,
         };
     };
@@ -27,8 +27,8 @@ describe("App", () => {
         expect(header).not.toBeNull();
     });
 
-    it("renders the Content component", () => {
-        const { content } = setupTests();
-        expect(content).not.toBeNull();
+    it("renders the Synthesizer component", () => {
+        const { synthesizer } = setupTests();
+        expect(synthesizer).not.toBeNull();
     });
 });

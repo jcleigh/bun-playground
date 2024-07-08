@@ -9,15 +9,13 @@ describe("Header", () => {
         const homeLink = utils.getByTestId("homeLink");
         const githubLink = utils.getByTestId("githubLink");
         const radiationIcon = utils.getByTestId("radiationIcon");
-        const atomIcon = utils.getByTestId("atomIcon");
-        const moonSunIcon = utils.getByTestId("moonSunIcon");
+        const toggleIcon = utils.getByTestId("themeToggleIcon");
 
         return {
             homeLink,
             githubLink,
             radiationIcon,
-            atomIcon,
-            moonSunIcon,
+            toggleIcon,
             ...utils,
         };
     };
@@ -44,13 +42,8 @@ describe("Header", () => {
     });
 
     it("renders the atom icon", () => {
-        const { atomIcon } = setupTests();
-        expect(atomIcon).not.toBeNull();
-    });
-
-    it("renders the moonSun icon", () => {
-        const { moonSunIcon } = setupTests();
-        expect(moonSunIcon).not.toBeNull();
+        const { toggleIcon } = setupTests();
+        expect(toggleIcon).not.toBeNull();
     });
 
     it("jcleigh link has correct href", () => {
